@@ -21,7 +21,7 @@ export function appendDocumentImportContext(
     const gqlContent = gqlContents
       ? gqlContents[i]
       : readFileSync(join(cwd, gqlRelPath), 'utf-8');
-    if (!gqlContent) throw new Error('never');
+    if (!gqlContent) throw new Error('never' + gqlRelPath);
 
     const createdPaths = createPaths(execContext, gqlRelPath);
     const { tsxFullPath, dtsFullPath } = createdPaths;
